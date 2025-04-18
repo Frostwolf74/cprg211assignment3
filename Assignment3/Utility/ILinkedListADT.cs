@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment3
 {
@@ -32,15 +28,15 @@ namespace Assignment3
         void AddFirst(User value);
 
         /// <summary>
-        /// Adds a new element at a specific position.
+        /// Inserts a new element at a specific position.
         /// </summary>
         /// <param name="value">Value that element is to contain.</param>
         /// <param name="index">Index to add new element at.</param>
         /// <exception cref="IndexOutOfRangeException">Thrown if index is negative or past the size of the list.</exception>
-        void Add(User value, int index);
+        void Insert(User value, int index);
 
         /// <summary>
-        /// Replaces the value  at index.
+        /// Replaces the value at index.
         /// </summary>
         /// <param name="value">Value to replace.</param>
         /// <param name="index">Index of element to replace.</param>
@@ -84,14 +80,19 @@ namespace Assignment3
         /// Gets the first index of element containing value.
         /// </summary>
         /// <param name="value">Value to find index of.</param>
-        /// <returns>First of index of node with matching value or -1 if not found.</returns>
+        /// <returns>First index of node with matching value or -1 if not found.</returns>
         int IndexOf(User value);
 
         /// <summary>
         /// Go through nodes and check if one has value.
         /// </summary>
-        /// <param name="value">Value to find index of.</param>
+        /// <param name="value">Value to find.</param>
         /// <returns>True if element exists with value.</returns>
         bool Contains(User value);
+
+        /// <summary>
+        /// Reverses the order of the linked list.
+        /// </summary>
+        void Reverse();
     }
 }
