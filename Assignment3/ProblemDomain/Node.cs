@@ -2,12 +2,12 @@
 {
     public class Node
     {
-        public string Data;
+        public string data;
         public Node? Next;
 
         public Node(string data)
         {
-            Data = data;
+            this.data = data;
             Next = null;
         }
     }
