@@ -8,7 +8,6 @@ using System.Xml.Linq;
 namespace Assignment3
 {
     [Serializable]
-    [DataContract]
     public class SLL : ILinkedListADT
     {
         private Node head;
