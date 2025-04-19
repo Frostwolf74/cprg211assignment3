@@ -1,3 +1,4 @@
+using System.Reflection.Emit;
 using Assignment3;
 
 namespace Assignment3.Tests
@@ -11,7 +12,7 @@ namespace Assignment3.Tests
         public void Setup()
         {
             // Uncomment the following line
-            //this.users = new SLL();
+            users = new SLL();
 
             users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
             users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
@@ -22,7 +23,7 @@ namespace Assignment3.Tests
         [TearDown]
         public void TearDown()
         {
-            this.users.Clear();
+            users.Clear();
         }
 
         /// <summary>
@@ -41,20 +42,20 @@ namespace Assignment3.Tests
         [Test]
         public void TestDeSerialization()
         {
-            SerializationHelper.SerializeUsers(users, testFileName);
-            ILinkedListADT deserializedUsers = SerializationHelper.DeserializeUsers(testFileName);
+            SerializationHelper.SerializeUsers(users, testFileName); 
+            ILinkedListADT? deserializedUsers = SerializationHelper.DeserializeUsers(testFileName);
             
-            Assert.IsTrue(users.Count() == deserializedUsers.Count());
+            Assert.That(deserializedUsers?.Count(), Is.EqualTo(users.Count()));
             
             for (int i = 0; i < users.Count(); i++)
             {
-                User expected = users.GetValue(i);
-                User actual = deserializedUsers.GetValue(i);
-
-                Assert.AreEqual(expected.Id, actual.Id);
-                Assert.AreEqual(expected.Name, actual.Name);
-                Assert.AreEqual(expected.Email, actual.Email);
-                Assert.AreEqual(expected.Password, actual.Password);
+                var expected = users.GetValue(i);
+                var actual = deserializedUsers?.GetValue(i);
+                
+                Assert.That(actual?.Id, Is.EqualTo(expected.Id));
+                Assert.That(actual.Name, Is.EqualTo(expected.Name));
+                Assert.That(actual.Email, Is.EqualTo(expected.Email));
+                Assert.That(actual.Password, Is.EqualTo(expected.Password));
             }
         }
     }

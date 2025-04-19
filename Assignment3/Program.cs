@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assignment3;
 
 namespace Assignment3
 {
@@ -10,28 +12,12 @@ namespace Assignment3
     {
         public static void Main(string[] args)
         {
-            LinkedList list = new LinkedList();
-            
-            list.AddLast("a");
-            list.AddLast("b");
-            list.AddLast("c");
-            list.AddLast("d");
-            list.AddLast("e");
-            list.AddLast("f");
+            var users = new SLL();
 
-            for (int i = 0; i < list.count; ++i)
-            {
-                Console.Write(list.Get(i)?.data);
-            }
-
-            Console.WriteLine();
-            
-            list.Pop(3);
-            
-            for (int i = 0; i < list.count; ++i)
-            {
-                Console.Write(list.Get(i)?.data);
-            }
+            users.AddLast(new User(1, "Joe Blow", "jblow@gmail.com", "password"));
+            users.AddLast(new User(2, "Joe Schmoe", "joe.schmoe@outlook.com", "abcdef"));
+            users.AddLast(new User(3, "Colonel Sanders", "chickenlover1890@gmail.com", "kfc5555"));
+            users.AddLast(new User(4, "Ronald McDonald", "burgers4life63@outlook.com", "mcdonalds999"));
         }
     }
 }
