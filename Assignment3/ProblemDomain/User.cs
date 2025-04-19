@@ -12,16 +12,11 @@ namespace Assignment3
     /// Serializable to support object persistence (e.g., in linked list serialization).
     /// </summary>
     [Serializable]
-    [DataContract]
     public class User : IEquatable<User>
     {
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
         public string Name { get; set; }
-        [DataMember]
         public string Email { get; set; }
-        [DataMember]
         public string Password { get; set; }
 
         /// <summary>

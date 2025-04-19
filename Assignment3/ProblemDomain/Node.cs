@@ -1,13 +1,16 @@
-﻿namespace Assignment3
+﻿using System;
+
+namespace Assignment3
 {
+    [Serializable]
     public class Node
     {
-        public string data;
-        public Node? Next;
+        public User Data;
+        public Node Next;
 
-        public Node(string data)
+        public Node(User Data)
         {
-            this.data = data;
+            this.Data = Data;
             Next = null;
         }
     }
