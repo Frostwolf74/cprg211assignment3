@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Runtime.Serialization;
 using Assignment3;
 using System.Xml.Linq;
 
 namespace Assignment3
 {
     [Serializable]
+    [DataContract]
     public class SLL : ILinkedListADT
     {
         private Node head;

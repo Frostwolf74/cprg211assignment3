@@ -1,5 +1,4 @@
-﻿using Assignment3;
-using System;
+﻿using System;
 
 namespace Assignment3
 {
